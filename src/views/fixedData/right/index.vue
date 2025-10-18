@@ -30,10 +30,8 @@
     <!-- 表格 -->
     <el-table :max-height="`calc(100vh - 230px)`" :data="paginatedData" style="width: 100%; margin-bottom: 10px;" border
       @selection-change="handleSelectionChange" ref="tableRef">
-      <!-- 多选 -->
-      <el-table-column type="selection" width="55" />
 
-      <!-- 数据列 -->
+      <el-table-column type="selection" width="55" />
       <el-table-column type="index" label="序号" width="100" sortable />
       <el-table-column prop="CellIdentity" label="小区标识" />
       <el-table-column prop="BS_ID" label="基站标识" />
@@ -50,8 +48,6 @@
       <el-table-column prop="TA_Command" label="TA Command" />
       <el-table-column prop="RealTA" label="Read TA" />
       <el-table-column prop="DistanceToBS" label="距基站距离" />
-
-      <!-- 操作列 -->
       <el-table-column label="操作" width="150" fixed="right">
         <template #default="scope">
           <el-button type="primary" size="small" @click="editRow(scope.$index)">编辑</el-button>
@@ -61,8 +57,8 @@
     </el-table>
 
     <el-pagination v-model:current-page="pageNo" v-model:page-size="limit" :page-sizes="[10, 20, 30, 40]"
-      :background="true" @current-change="getSpu" @size-change="getchangeSpu"
-      layout=" prev, pager, next, jumper,->,sizes,total" :total="total" />
+      :background="true" @current-change="" @size-change="" layout=" prev, pager, next, jumper,->,sizes,total"
+      :total="total" />
   </div>
 </template>
 

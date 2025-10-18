@@ -7,7 +7,6 @@ import { onMounted } from 'vue'
 
 function loadBMap(ak) {
   return new Promise((resolve, reject) => {
-    // 定义全局回调函数
     window.initBMap = () => {
       resolve()
       delete window.initBMap
@@ -21,13 +20,12 @@ function loadBMap(ak) {
 }
 
 onMounted(async () => {
-  const ak = 'sFbdfgEyYWiJuq5TQ2VmWL68XfNRzK1Y' // 替换成你的 AK
+  const ak = 'sFbdfgEyYWiJuq5TQ2VmWL68XfNRzK1Y'
   try {
     await loadBMap(ak)
 
     const BMap = window.BMap
-    console.log('BMap:', BMap) // 确认已加载
-
+    console.log('BMap:', BMap)
     // 坐标
     const lng = 116.27238836621343
     const lat = 40.04921333266721
@@ -38,7 +36,7 @@ onMounted(async () => {
     map.centerAndZoom(point, 15)
     map.enableScrollWheelZoom(true)
 
-    // 圆形覆盖物
+
     const radii = [200, 400, 600, 800]
     const colors = ['#188b28', '#867e33', '#f7df06', '#f10606']
     const signalRanges = [
@@ -57,7 +55,7 @@ onMounted(async () => {
       map.addOverlay(circle)
     })
 
-    // 创建图例容器
+
     const legendContainer = document.createElement('div')
     legendContainer.style.position = 'absolute'
     legendContainer.style.left = '10px'
@@ -68,7 +66,7 @@ onMounted(async () => {
     legendContainer.style.boxShadow = '0 0 5px rgba(0, 0, 0, 0.3)'
     legendContainer.style.zIndex = '1000'
 
-    // 添加图例标题
+
     const legendTitle = document.createElement('h3')
     legendTitle.textContent = '信号强度范围'
     legendContainer.appendChild(legendTitle)

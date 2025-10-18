@@ -106,14 +106,12 @@ const handleFileChange = (e) => {
 
 .bottom {
   flex: 10;
-  /* background-color: #e0e0e0; */
   display: flex;
 
 }
 
 .left {
   flex: 2;
-  /* background-color: #533636; */
   margin: 10px;
 }
 

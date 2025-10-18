@@ -1,6 +1,6 @@
 <template>
   <div class="treeContainer">
-    <!-- <el-button type="primary" @click="loadTree">加载树结构</el-button> -->
+    <!-- <el-button type="primary" @click="loadTree">加载树</el-button> -->
     <el-tree v-if="treeData.length" :data="treeData" :props="{ label: 'label' }" default-expand-all show-checkbox />
   </div>
 </template>
